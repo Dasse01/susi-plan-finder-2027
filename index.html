@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>2027 대입 시행계획 링크 모음</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-primary: #0a0e1a;
+      --bg-secondary: #111827;
+      --bg-card: rgba(17, 24, 39, 0.7);
+      --bg-card-hover: rgba(30, 41, 59, 0.8);
+      --border-subtle: rgba(148, 163, 184, 0.12);
+      --border-hover: rgba(148, 163, 184, 0.25);
+      --text-primary: #f1f5f9;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent-blue: #3b82f6;
+      --accent-blue-hover: #60a5fa;
+      --accent-emerald: #10b981;
+      --accent-violet: #8b5cf6;
+      --glow-blue: rgba(59, 130, 246, 0.15);
+      --glow-emerald: rgba(16, 185, 129, 0.12);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --shadow-card: 0 4px 24px -4px rgba(0, 0, 0, 0.4);
+      --shadow-glow: 0 0 40px -8px rgba(59, 130, 246, 0.3);
+      --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-base: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Background Effects */
+    .bg-effects {
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .bg-effects::before {
+      content: '';
+      position: absolute;
+      top: -30%;
+      left: -20%;
+      width: 70%;
+      height: 70%;
+      background: radial-gradient(circle, var(--glow-blue) 0%, transparent 60%);
+      animation: float 20s ease-in-out infinite;
+    }
+
+    .bg-effects::after {
+      content: '';
+      position: absolute;
+      bottom: -20%;
+      right: -15%;
+      width: 60%;
+      height: 60%;
+      background: radial-gradient(circle, var(--glow-emerald) 0%, transparent 55%);
+      animation: float 25s ease-in-out infinite reverse;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(5%, 3%) scale(1.05); }
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px) saturate(180%);
+      background: rgba(10, 14, 26, 0.85);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .topbar {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-violet));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 16px;
+      box-shadow: 0 0 20px -4px var(--accent-blue);
+    }
+
+    .logo-text {
+      font-weight: 900;
+      font-size: 18px;
+      letter-spacing: -0.5px;
+    }
+
+    .badge {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      padding: 6px 14px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    /* Main Content */
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 32px 24px 60px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(180deg, var(--bg-card) 0%, rgba(17, 24, 39, 0.4) 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, var(--text-primary) 0%, var(--text-secondary) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .lead {
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.7;
+      max-width: 560px;
+    }
+
+    .lead b {
+      color: var(--text-primary);
+      font-weight: 700;
+    }
+
+    /* Controls */
+    .controls {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 320px;
+    }
+
+    @media (max-width: 900px) {
+      .controls {
+        min-width: 100%;
+      }
+    }
+
+    .search-box {
+      position: relative;
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 14px 16px 14px 48px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      background: rgba(0, 0, 0, 0.3);
+      color: var(--text-primary);
+      font-size: 15px;
+      font-family: inherit;
+      transition: all var(--transition-fast);
+      outline: none;
+    }
+
+    .search-box input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .search-box input:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 18px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-primary);
+      font-size: 14px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: var(--border-hover);
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent-blue), var(--accent-violet));
+      border-color: transparent;
+      box-shadow: 0 4px 16px -4px rgba(59, 130, 246, 0.4);
+    }
+
+    .btn.primary:hover {
+      box-shadow: 0 4px 24px -4px rgba(59, 130, 246, 0.5);
+      transform: translateY(-1px);
+    }
+
+    /* Stats */
+    .stats {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .stat {
+      flex: 1;
+      padding: 16px 20px;
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+    }
+
+    .stat-value {
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--text-primary);
+      letter-spacing: -1px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 16px;
+    }
+
+    @media (max-width: 400px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Cards */
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: all var(--transition-base);
+      animation: cardIn 0.4s ease backwards;
+    }
+
+    @keyframes cardIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+    }
+
+    .card:hover {
+      background: var(--bg-card-hover);
+      border-color: var(--border-hover);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-glow);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .uni-name {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      line-height: 1.4;
+    }
+
+    .host {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-top: 6px;
+      padding: 4px 8px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: var(--radius-sm);
+      display: inline-block;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: auto;
+    }
+
+    .link-btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all var(--transition-fast);
+    }
+
+    .link-btn.secondary {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-primary);
+    }
+
+    .link-btn.secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--border-hover);
+    }
+
+    .link-btn.primary {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(139, 92, 246, 0.2));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: var(--accent-blue-hover);
+    }
+
+    .link-btn.primary:hover {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.3));
+      border-color: rgba(59, 130, 246, 0.5);
+      box-shadow: 0 0 20px -4px rgba(59, 130, 246, 0.3);
+    }
+
+    .link-btn.disabled {
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .link-btn svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    /* Empty State */
+    .empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 60px 24px;
+      background: var(--bg-card);
+      border: 1px dashed var(--border-subtle);
+      border-radius: var(--radius-lg);
+      color: var(--text-secondary);
+    }
+
+    .empty-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 16px;
+      color: var(--text-muted);
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 10px;
+      height: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg-secondary);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-subtle);
+      border-radius: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--border-hover);
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-effects"></div>
+
+  <header>
+    <div class="topbar">
+      <div class="logo">
+        <div class="logo-icon">27</div>
+        <span class="logo-text">2027 대입 시행계획</span>
+        <span class="badge" id="badgeCount">0개 표시</span>
+      </div>
+      <div class="badge">대학명 · 도메인 검색 지원</div>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <section class="hero">
+      <div class="hero-content">
+        <div>
+          <h1>대학별 2027 대입 시행계획 바로가기</h1>
+          <p class="lead">
+            검색창에 <b>대학명</b> 또는 <b>도메인</b>을 입력하면 즉시 필터링됩니다.<br>
+            <b>입학처</b> 버튼은 해당 대학 입학처로, <b>시행계획</b> 버튼은 자료 다운로드로 연결됩니다.
+          </p>
+        </div>
+        <div class="controls">
+          <div class="search-box">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="m21 21-4.35-4.35"/>
+            </svg>
+            <input id="q" placeholder="예) 서울대, 교대, kaist" autocomplete="off" />
+          </div>
+          <div class="btn-group">
+            <button class="btn" id="clear">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+                <path d="M3 3v5h5"/>
+              </svg>
+              초기화
+            </button>
+            <button class="btn primary" id="driveOnly">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              자료 있는 대학만
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-value" id="kTotal">0</div>
+          <div class="stat-label">전체 대학</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="kDrive">0</div>
+          <div class="stat-label">시행계획 보유</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value" id="kShown">0</div>
+          <div class="stat-label">현재 표시</div>
+        </div>
+      </div>
+    </section>
+
+    <div id="grid" class="grid"></div>
+    <div id="empty" class="empty" style="display:none;">
+      <svg class="empty-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="11" cy="11" r="8"/>
+        <path d="m21 21-4.35-4.35"/>
+      </svg>
+      <div>검색 결과가 없습니다</div>
+      <div style="margin-top: 4px; font-size: 13px;">다른 키워드로 다시 검색해보세요</div>
+    </div>
+
+    <div class="footer">
+      ※ 링크는 각 대학 입학처 및 공개 자료 페이지로 직접 연결됩니다
+    </div>
+  </div>
+
+  <script>
+    const ROWS = [{"host": "www.cue.ac.kr", "university": "진주교육대학교", "note": "", "home_url": "https://www.cue.ac.kr", "plan_url": "https://drive.google.com/file/d/1IleYDXJzyI80jfYazj_x-DLOFt_xSHgw/view?usp=sharing"}, {"host": "ipsi.kaya.ac.kr", "university": "가야대학교", "note": "", "home_url": "https://ipsi.kaya.ac.kr", "plan_url": "https://drive.google.com/file/d/1DUL8z_m6yWUlLQwa3A7_UZOPAs4X2WAX/view?usp=drive_link"}, {"host": "admission.gachon.ac.kr", "university": "가천대학교", "note": "", "home_url": "https://admission.gachon.ac.kr", "plan_url": "https://drive.google.com/file/d/1WkNxnBDeFhB00xggsC9835JETNuPQnwP/view?usp=drive_link"}, {"host": "ipsi.cku.ac.kr", "university": "가톨릭관동대학교", "note": "", "home_url": "https://ipsi.cku.ac.kr", "plan_url": "https://drive.google.com/file/d/1wZs_GXlPty5dht6f9-ANjU4ow3ms0bH_/view?usp=drive_link"}, {"host": "ipsi.catholic.ac.kr", "university": "가톨릭대학교", "note": "", "home_url": "https://ipsi.catholic.ac.kr", "plan_url": "https://drive.google.com/file/d/1_ELbVWLh8EppkFira97uHISfgRqiPRUj/view?usp=drive_link"}, {"host": "admission.cs.ac.kr", "university": "가톨릭상지대학교", "note": "", "home_url": "https://admission.cs.ac.kr", "plan_url": "https://drive.google.com/file/d/1ezOypG9u6qshvyhPtcyD7mIZMQA5sKkt/view?usp=sharing"}, {"host": "www.mtu.ac.kr", "university": "감리교신학대학교", "note": "", "home_url": "https://www.mtu.ac.kr", "plan_url": "https://drive.google.com/file/d/1SIIyhLnWMctaqMmw4Rgf1U9t-z3H9MMZ/view?usp=sharing"}, {"host": "admission.kangnam.ac.kr", "university": "강남대학교", "note": "경기도 용인 소재", "home_url": "https://admission.kangnam.ac.kr", "plan_url": "https://drive.google.com/file/d/18Xqw3z8yLWpWHS2ZFEEhXezQM4WYMwRN/view?usp=drive_link"}, {"host": "iphak.gwnu.ac.kr", "university": "강릉원주대학교", "note": "", "home_url": "https://iphak.gwnu.ac.kr", "plan_url": "https://drive.google.com/file/d/1sDETV3672efu8ufcP6HkatISEu7lRxZ9/view?usp=drive_link"}, {"host": "entrance.gangseo.ac.kr", "university": "강서대학교", "note": "", "home_url": "https://entrance.gangseo.ac.kr", "plan_url": "https://drive.google.com/file/d/1aexFMxsKp1UiQPcJNJUnGNnkEKUZTe2p/view?usp=drive_link"}, {"host": "wwwk.kangwon.ac.kr", "university": "강원대학교", "note": "", "home_url": "https://wwwk.kangwon.ac.kr", "plan_url": "https://drive.google.com/file/d/1Q21wstynOLmy_FoMzh4d34XOOzdVoEIP/view?usp=drive_link"}, {"host": "enter.konkuk.ac.kr", "university": "건국대학교", "note": "", "home_url": "https://enter.konkuk.ac.kr", "plan_url": "https://drive.google.com/file/d/1e398d4xcMpIFv8zKXXDkzxbV7enFLfQz/view?usp=drive_link"}, {"host": "enter.kku.ac.kr", "university": "건국대학교 (GLOCAL)", "note": "", "home_url": "https://enter.kku.ac.kr", "plan_url": "https://drive.google.com/file/d/1f-5YMWYK2aK2m3ajZ-oIJuVCeGxGDX-q/view?usp=drive_link"}, {"host": "ipsi.konyang.ac.kr", "university": "건양대학교", "note": "", "home_url": "https://ipsi.konyang.ac.kr", "plan_url": "https://drive.google.com/file/d/1rbRyxUNJv3Axmypgv_0ucXbmVxsi5ZTk/view?usp=sharing"}, {"host": "enter.kyonggi.ac.kr", "university": "경기대학교", "note": "", "home_url": "https://enter.kyonggi.ac.kr", "plan_url": "https://drive.google.com/file/d/1NR0yTCwGdLL5eWxB-44Y2B7d5Ywp6zOq/view?usp=sharing"}, {"host": "ipsi.kyungnam.ac.kr", "university": "경남대학교", "note": "", "home_url": "https://ipsi.kyungnam.ac.kr", "plan_url": "https://drive.google.com/file/d/16NwPtJahkni83h_1OVe0iPQFdbMZlkS1/view?usp=sharing"}, {"host": "www.kduniv.ac.kr", "university": "경동대학교", "note": "", "home_url": "https://www.kduniv.ac.kr", "plan_url": "https://drive.google.com/file/d/1ErXvBBpAQP-1ayUD832DVWl-u8n0adcy/view?usp=sharing"}, {"host": "ipsi1.knu.ac.kr", "university": "경북대학교", "note": "", "home_url": "https://ipsi1.knu.ac.kr", "plan_url": "https://drive.google.com/file/d/1cjt61ul5L4nRM2CRgCkkT2OkRyAV3-I2/view?usp=sharing"}, {"host": "www.knuh.ac.kr", "university": "경북대학교병원", "note": "(입학처가 아닌 병원 도메인이므로 재확인 필요)", "home_url": "https://www.knuh.ac.kr", "plan_url": "https://drive.google.com/file/d/1R6TDh6dU5-iLKiAlmGswtsPGDArf-O8x/view?usp=drive_link"}, {"host": "www.gnu.ac.kr", "university": "경상국립대학교", "note": "", "home_url": "https://www.gnu.ac.kr", "plan_url": "https://drive.google.com/file/d/161eEULYiP1MkM0LfE5cwvpsf2uCLTnQR/view?usp=sharing"}, {"host": "ipsi.ks.ac.kr", "university": "경성대학교", "note": "", "home_url": "https://ipsi.ks.ac.kr", "plan_url": "https://drive.google.com/file/d/1087dgNsEpSSB6JeZ-uV2Q2kKEmDToOMM/view?usp=sharing"}, {"host": "www.ikw.ac.kr", "university": "경운대학교", "note": "", "home_url": "https://www.ikw.ac.kr", "plan_url": "https://drive.google.com/file/d/1CaRNzbbYeFxtfkLyZkWClHWhnz45lUpJ/view?usp=sharing"}, {"host": "entrance.gnue.ac.kr", "university": "경인교육대학교", "note": "", "home_url": "https://entrance.gnue.ac.kr", "plan_url": "https://drive.google.com/file/d/1JEAeiowSPMCrdV8DbaBv77X0JccffIC7/view?usp=drive_link"}, {"host": "ipsi.ginue.ac.kr", "university": "경인교육대학교", "note": "", "home_url": "https://ipsi.ginue.ac.kr", "plan_url": "https://drive.google.com/file/d/1F0C0xhAF_sFQsEETiuHBhTvieTSQdTeA/view?usp=sharing"}, {"host": "ibsi.kiu.ac.kr", "university": "경일대학교", "note": "", "home_url": "https://ibsi.kiu.ac.kr", "plan_url": "https://drive.google.com/file/d/1PXb5KIa9oTpziF13vfkpvpBTmmicEGll/view?usp=sharing"}, {"host": "www.police.ac.kr", "university": "경찰대학교", "note": "", "home_url": "https://www.police.ac.kr", "plan_url": "https://drive.google.com/file/d/1W7c4cx4P96EVGyh5S947iZycEBRylwIl/view?usp=drive_link"}, {"host": "iphak.khu.ac.kr", "university": "경희대학교", "note": "", "home_url": "https://iphak.khu.ac.kr", "plan_url": "https://drive.google.com/file/d/156Pz7VFTtffcfrOm_aaoON4D9BX7ptgh/view?usp=sharing"}, {"host": "www.gokmu.ac.kr", "university": "계명대학교", "note": "", "home_url": "https://www.gokmu.ac.kr", "plan_url": "https://drive.google.com/file/d/1JEAeiowSPMCrdV8DbaBv77X0JccffIC7/view?usp=drive_link"}, {"host": "oku.korea.ac.kr", "university": "고려대학교", "note": "", "home_url": "https://oku.korea.ac.kr", "plan_url": "https://drive.google.com/file/d/1F8bhNVYuv1k7-xmtY-aoaF53oAyuofpx/view?usp=sharing"}, {"host": "home.kosin.ac.kr", "university": "고신대학교", "note": "", "home_url": "https://home.kosin.ac.kr", "plan_url": "https://drive.google.com/file/d/1tnnu8V4yK6Pdq7oydwI-wUjjS8w6PGCO/view?usp=drive_link"}, {"host": "rokaf.airforce.mil.kr", "university": "공군사관학교", "note": "", "home_url": "http://rokaf.airforce.mil.kr", "plan_url": "https://drive.google.com/file/d/12gIOub5j55_vhDQYt48Ld78zoAXrHnnw/view?usp=sharing"}, {"host": "ipsi.kongju.ac.kr", "university": "공주대학교", "note": "", "home_url": "https://ipsi.kongju.ac.kr", "plan_url": "https://drive.google.com/file/d/1mTAnF-nF32wkHiSL8s1zynUkiv097I7n/view?usp=drive_link"}, {"host": "www.kwangshin.ac.kr", "university": "광신대학교", "note": "", "home_url": "https://www.kwangshin.ac.kr", "plan_url": "https://drive.google.com/file/d/1n4M3-QtKozLHoYniMHgFSlTnwc1UGAc4/view?usp=drive_link"}, {"host": "iphak.kw.ac.kr", "university": "광운대학교", "note": "", "home_url": "https://iphak.kw.ac.kr", "plan_url": "https://drive.google.com/file/d/1Rtt1tIUH65WQsOsuj-n-IWkZLKVsSkVg/view?usp=drive_link"}, {"host": "admission.gjc.ac.kr", "university": "광주가톨릭대학교", "note": "Gwangju Catholic University", "home_url": "https://admission.gjc.ac.kr", "plan_url": "https://drive.google.com/file/d/1bRgNhUtcKYl2BTxZIxSTXzUpMjXxrCzT/view?usp=drive_link"}, {"host": "www.gist.ac.kr", "university": "광주과학기술원 (GIST)", "note": "", "home_url": "https://www.gist.ac.kr", "plan_url": "https://drive.google.com/file/d/1h8Cc5MUE4ugNu-stoSD2JPVbkfQZM-4u/view?usp=drive_link"}, {"host": "www.gjue.ac.kr", "university": "광주교육대학교", "note": "", "home_url": "https://www.gjue.ac.kr", "plan_url": "https://drive.google.com/file/d/11NC_CHpkU1dzRAsJb5cuRIXX6Wk6x9Ob/view?usp=drive_link"}, {"host": "iphak.gwangju.ac.kr", "university": "광주대학교", "note": "", "home_url": "https://iphak.gwangju.ac.kr", "plan_url": "https://drive.google.com/file/d/1Qtpj13Dnf8ORh1fSeFrLmns9i1hY0Z81/view?usp=drive_link"}, {"host": "ipsi.kwu.ac.kr", "university": "광주여자대학교", "note": "", "home_url": "https://ipsi.kwu.ac.kr", "plan_url": "https://drive.google.com/file/d/1thCxgZ9j_VagDCVGG8Xwt0MVCt9IEjPF/view?usp=drive_link"}, {"host": "www.kunsan.ac.kr", "university": "국립군산대학교", "note": "", "home_url": "https://www.kunsan.ac.kr", "plan_url": "https://drive.google.com/file/d/1h8Cc5MUE4ugNu-stoSD2JPVbkfQZM-4u/view?usp=drive_link"}, {"host": "ipsi.mokpo.ac.kr", "university": "국립목포대학교", "note": "", "home_url": "https://ipsi.mokpo.ac.kr", "plan_url": "https://drive.google.com/file/d/1TQcZWFbkhR1MiIULd_sNCtwAbPBxTeb3/view?usp=drive_link"}, {"host": "www.scnu.ac.kr", "university": "국립순천대학교", "note": "", "home_url": "https://www.scnu.ac.kr", "plan_url": "https://drive.google.com/file/d/1yq5zFwiVl8kFAZ5NUb1JECkK3La2u03j/view?usp=drive_link"}, {"host": "ipsi.andong.ac.kr", "university": "국립안동대학교", "note": "", "home_url": "https://ipsi.andong.ac.kr", "plan_url": "https://drive.google.com/file/d/1o1QZgsh9jSY8Ee-55bAT37rY7CgWcf6F/view?usp=drive_link"}, {"host": "www.changwon.ac.kr", "university": "국립창원대학교", "note": "", "home_url": "https://www.changwon.ac.kr", "plan_url": "https://drive.google.com/file/d/1844FsB4kfbapWIcz3QFrRovxuYR2D7Nh/view?usp=drive_link"}, {"host": "www.hanbat.ac.kr", "university": "국립한밭대학교", "note": "", "home_url": "https://www.hanbat.ac.kr", "plan_url": "https://drive.google.com/file/d/1HDQnlPLdV3XFGlPimDph7Q1AHCyM_Aso/view?usp=drive_link"}, {"host": "admission.kookmin.ac.kr", "university": "국민대학교", "note": "", "home_url": "https://admission.kookmin.ac.kr", "plan_url": "https://drive.google.com/file/d/1O0kt1cWjPkZwqji7EWPrxajab-6zF3Y7/view?usp=drive_link"}, {"host": "ipsi.kdu.ac.kr", "university": "극동대학교", "note": "", "home_url": "https://ipsi.kdu.ac.kr", "plan_url": "https://drive.google.com/file/d/1bJldKvoN9YOI7GnBz4Z3kTf9JVBMI24Q/view?usp=drive_link"}, {"host": "www.ggu.ac.kr", "university": "금강대학교", "note": "", "home_url": "https://www.ggu.ac.kr", "plan_url": "https://drive.google.com/file/d/1iALmMbLK3zGHRC86IdZH1FwaRzDjzqhB/view?usp=drive_link"}, {"host": "iphak.kumoh.ac.kr", "university": "금오공과대학교", "note": "", "home_url": "https://iphak.kumoh.ac.kr", "plan_url": "https://drive.google.com/file/d/1sLbX-86KP8GzJUn46mLiwzegVA8spkYK/view?usp=drive_link"}, {"host": "ibhak.gimcheon.ac.kr", "university": "김천대학교", "note": "", "home_url": "https://ibhak.gimcheon.ac.kr", "plan_url": "https://drive.google.com/file/d/1475rrummzdSx0MQfPYp0KQcoraBr1XQT/view?usp=drive_link"}, {"host": "www.kkot.ac.kr", "university": "꽃동네대학교", "note": "", "home_url": "https://www.kkot.ac.kr", "plan_url": "https://drive.google.com/file/d/1f7KZlwr8g-hHVezJyR5TU6SvkSuc1rNo/view?usp=sharing"}, {"host": "cms.kornu.ac.kr", "university": "나사렛대학교", "note": "Korea Nazarene University", "home_url": "https://cms.kornu.ac.kr", "plan_url": "https://drive.google.com/file/d/1o1QZgsh9jSY8Ee-55bAT37rY7CgWcf6F/view?usp=drive_link"}, {"host": "ipsi.nambu.ac.kr", "university": "남부대학교", "note": "", "home_url": "https://ipsi.nambu.ac.kr", "plan_url": "https://drive.google.com/file/d/1HS4cNWIP5TrnQ-hff7hbwxQ0Of0u6JsA/view?usp=sharing"}, {"host": "www.namseoul.net", "university": "남서울대학교", "note": "", "home_url": "https://www.namseoul.net", "plan_url": "https://drive.google.com/file/d/10T0v6MYZO1gY2eCZjquEqVqYIaSSUENZ/view?usp=sharing"}, {"host": "ipsi.dankook.ac.kr", "university": "단국대학교", "note": "", "home_url": "https://ipsi.dankook.ac.kr", "plan_url": "https://drive.google.com/file/d/1KaGP7M-3pjEQpeZkJNK08rLhBKSu70MI/view?usp=drive_link, https://drive.google.com/file/d/1tXVnthoiNDkhFhNlr6Q33sm0U3lzdk-U/view?usp=drive_link"}, {"host": "www.dcatholic.ac.kr", "university": "대구가톨릭대학교", "note": "", "home_url": "https://www.dcatholic.ac.kr", "plan_url": "https://drive.google.com/file/d/14W5rPxNrk_AAQYcQEkZEFhL842KTrJbe/view?usp=sharing"}, {"host": "ibsi.cu.ac.kr", "university": "대구가톨릭대학교", "note": "", "home_url": "https://ibsi.cu.ac.kr", "plan_url": "https://drive.google.com/file/d/1XVupaW7hYAUxCWCB8N-KSCrkiOyrIhIL/view?usp=sharing"}, {"host": "www.dgist.ac.kr", "university": "대구경북과학기술원 (DGIST)", "note": "", "home_url": "https://www.dgist.ac.kr", "plan_url": "https://drive.google.com/file/d/1Brjik6cfCJQ04yE9tl5BWFyhIpy66Hft/view?usp=sharing"}, {"host": "admission.dnue.ac.kr", "university": "대구교육대학교", "note": "", "home_url": "https://admission.dnue.ac.kr", "plan_url": "https://drive.google.com/file/d/1nSQwIA1zMUli6iHAYdwjEz1f6Sf1yacy/view?usp=sharing"}, {"host": "ipsi.daegu.ac.kr", "university": "대구대학교", "note": "", "home_url": "https://ipsi.daegu.ac.kr", "plan_url": "https://drive.google.com/file/d/1-SEyXn2lBjfm7TLe_hQInMJX4v1a580R/view?usp=sharing"}, {"host": "www.dhu.ac.kr", "university": "대구한의대학교", "note": "", "home_url": "https://www.dhu.ac.kr", "plan_url": "https://drive.google.com/file/d/1k9_aYXK2xXgLajN0XXuDeZP79C4Bfsrp/view?usp=sharing"}, {"host": "www.daeshin.ac.kr", "university": "대신대학교", "note": "", "home_url": "https://www.daeshin.ac.kr", "plan_url": "https://drive.google.com/file/d/15FMl5DIadQcaDqURm2r__-pn2Gq42iX7/view?usp=sharing"}, {"host": "ipsi.dju.ac.kr", "university": "대전대학교", "note": "", "home_url": "https://ipsi.dju.ac.kr", "plan_url": "https://drive.google.com/file/d/1u-W0IvfxKTUPeCPhkmrmaPkWVJpWj_uS/view?usp=sharing"}, {"host": "ipsi.daejeon.ac.kr", "university": "대전대학교", "note": "", "home_url": "https://ipsi.daejeon.ac.kr", "plan_url": "https://drive.google.com/file/d/1IWFjH8cOesnI_nLjzH4ynCxGwDy3Pvk5/view?usp=drivesdk"}, {"host": "admission.daejin.ac.kr", "university": "대진대학교", "note": "", "home_url": "https://admission.daejin.ac.kr", "plan_url": "https://drive.google.com/file/d/16ehJ7cQFdzQMItmkeJVqulJvrms8Tmtf/view?usp=drive_link"}, {"host": "enter.duksung.ac.kr", "university": "덕성여자대학교", "note": "", "home_url": "https://enter.duksung.ac.kr", "plan_url": "https://drive.google.com/file/d/1KX7mxu_r_DTYg3QXAMiu_pu6PM0Y3E0b/view?usp=sharing"}, {"host": "ipsi.dongguk.edu", "university": "동국대학교 (WISE/경주)", "note": "", "home_url": "https://ipsi.dongguk.edu", "plan_url": "https://drive.google.com/file/d/1aqxME0i0aYdqGVAbL6q7S824MnqDv1z9/view?usp=sharing"}, {"host": "ipsi.dongguk.ac.kr", "university": "동국대학교 (서울)", "note": "", "home_url": "https://ipsi.dongguk.ac.kr", "plan_url": "https://drive.google.com/file/d/1m-icuRPfTX-Ve-KQHmd369_lGtS4zu8n/view?usp=drive_link"}, {"host": "ipsi.dongduk.ac.kr", "university": "동덕여자대학교", "note": "", "home_url": "https://ipsi.dongduk.ac.kr", "plan_url": "https://drive.google.com/file/d/1UVf4xZw9YoglHGza3dMzPq0GvR065Iwa/view?usp=sharing"}, {"host": "www.tu.ac.kr", "university": "동명대학교", "note": "", "home_url": "https://www.tu.ac.kr", "plan_url": "https://drive.google.com/file/d/1XVQt6VXxwNIIpXCvjL-tI6HBfiMiNWuD/view?usp=drive_link"}, {"host": "ipsi.dongseo.ac.kr", "university": "동서대학교", "note": "", "home_url": "https://ipsi.dongseo.ac.kr", "plan_url": "https://drive.google.com/file/d/1fX2s5c4RNB_i8N5U8Ls8qIgmqUOW-LYJ/view?usp=sharing"}, {"host": "ipsi.dsu.ac.kr", "university": "동신대학교", "note": "", "home_url": "https://ipsi.dsu.ac.kr", "plan_url": "https://drive.google.com/file/d/1wZFfKRYwdmUSSQHBhRM9yaeVOFCuPHn6/view?usp=sharing"}, {"host": "ent.donga.ac.kr", "university": "동아대학교", "note": "", "home_url": "https://ent.donga.ac.kr", "plan_url": "https://drive.google.com/file/d/1rbRyxUNJv3Axmypgv_0ucXbmVxsi5ZTk/view?usp=sharing"}, {"host": "ipsi.dyu.ac.kr", "university": "동양대학교", "note": "", "home_url": "https://ipsi.dyu.ac.kr", "plan_url": "https://drive.google.com/file/d/1dauvkMl4HrLGOxl64iUplmjk6bOVsifs/view?usp=sharing"}, {"host": "ipsi.dgau.ac.kr", "university": "동양대학교", "note": "", "home_url": "https://ipsi.dgau.ac.kr", "plan_url": "https://drive.google.com/file/d/1zVXrj6lgo5T4Dpo0wrkebB_EqrL331I5/view?usp=sharing"}, {"host": "ipsi.deu.ac.kr", "university": "동의대학교", "note": "", "home_url": "https://ipsi.deu.ac.kr", "plan_url": "https://drive.google.com/file/d/1ore6HhKlTWPOBJhqNLFaueIHZNVdFBrY/view?usp=sharing"}, {"host": "ltu-admission.ac.kr", "university": "루터대학교", "note": "Luther University", "home_url": "https://ltu-admission.ac.kr", "plan_url": "https://drive.google.com/file/d/1g8LTIpN_hXP2hJNLXRhHyxB98Du4HL7G/view?usp=sharing"}, {"host": "www.mcu.ac.kr", "university": "명신대학교(폐교/확인필요)", "note": "", "home_url": "https://www.mcu.ac.kr", "plan_url": "https://drive.google.com/file/d/1Q9mWUOvrIMpkoXtE1K53T6RJa672fCOH/view?usp=drive_link"}, {"host": "iphak.mju.ac.kr", "university": "명지대학교", "note": "", "home_url": "https://iphak.mju.ac.kr", "plan_url": "https://drive.google.com/file/d/1RLBazy9UmTyE44Jd7dbXwiRcJKxbQgF0/view?usp=sharing"}, {"host": "enter.mokwon.ac.kr", "university": "목원대학교", "note": "", "home_url": "https://enter.mokwon.ac.kr", "plan_url": "https://drive.google.com/file/d/1ffvxOluKpUQwGHKcd997zUktOo07CzA6/view?usp=drive_link"}, {"host": "www.mmu.ac.kr", "university": "목포해양대학교", "note": "", "home_url": "https://www.mmu.ac.kr", "plan_url": "https://drive.google.com/file/d/1T7I4ooCHHHEWJfqXbW9I7Sc6WLNKD9Uw/view?usp=drive_link"}, {"host": "enter.pcu.ac.kr", "university": "배재대학교", "note": "", "home_url": "https://enter.pcu.ac.kr", "plan_url": "https://drive.google.com/file/d/1BMtgmO5i9R4skthJA81214heF6DWnW6T/view?usp=drive_link"}, {"host": "ipsi.bu.ac.kr", "university": "백석대학교", "note": "", "home_url": "https://ipsi.bu.ac.kr", "plan_url": "https://drive.google.com/file/d/1Xzo_Abhh2Arq2Lk_85t1VGW9c9vnHbYH/view?usp=drive_link"}, {"host": "iphak.pknu.ac.kr", "university": "부경대학교", "note": "", "home_url": "https://iphak.pknu.ac.kr", "plan_url": "https://drive.google.com/file/d/1ibgglNkpkPFsGM31aCV3hciRHAGB3wZ-/view?usp=drive_link"}, {"host": "ipsi.cup.ac.kr", "university": "부산가톨릭대학교", "note": "", "home_url": "https://ipsi.cup.ac.kr", "plan_url": "https://drive.google.com/file/d/1STRBU_Fpfbp0hlpI3s447eeI8dfaXKPx/view?usp=drive_link"}, {"host": "enter.bnue.ac.kr", "university": "부산교육대학교", "note": "", "home_url": "https://enter.bnue.ac.kr", "plan_url": "https://drive.google.com/file/d/1lLlshIeICXUnxfuVk6n8ACi716n1WwKj/view?usp=drive_link"}, {"host": "go.pusan.ac.kr", "university": "부산대학교", "note": "", "home_url": "https://go.pusan.ac.kr", "plan_url": "https://drive.google.com/file/d/1tqrPhfjzoEQYo8kaiYVxYyIMZiyWUgc-/view?usp=drive_link"}, {"host": "enter.bufs.ac.kr", "university": "부산외국어대학교", "note": "", "home_url": "https://enter.bufs.ac.kr", "plan_url": "https://drive.google.com/file/d/1ctu4nz0h_VLipN3fbRTzK3hOYdKG5Dm8/view?usp=drive_link"}, {"host": "ipsi.bpu.ac.kr", "university": "부산장신대학교", "note": "", "home_url": "https://ipsi.bpu.ac.kr", "plan_url": "https://drive.google.com/file/d/195ygHyqKl2JPeyqurSAxb5PQ4f0_y383/view?usp=drive_link"}, {"host": "ipsi.shyu.ac.kr", "university": "삼육대학교", "note": "", "home_url": "https://ipsi.shyu.ac.kr", "plan_url": "https://drive.google.com/file/d/11YjQBuinAGwoVye2WeVm2jHRHjpLqQDW/view?usp=sharing"}, {"host": "ipsi.syu.ac.kr", "university": "삼육대학교", "note": "", "home_url": "https://ipsi.syu.ac.kr", "plan_url": "https://drive.google.com/file/d/19YqdNfnnR82oHeiUFt6QCGXNfVBuwSru/view?usp=drive_link"}, {"host": "admission.smu.ac.kr", "university": "상명대학교", "note": "", "home_url": "https://admission.smu.ac.kr", "plan_url": "https://drive.google.com/file/d/1uYDwGGmChW-diuPYjQCrXXi8SfXVM1ZC/view?usp=drive_link, https://drive.google.com/file/d/1kZ_7C0Mx6g95-YWN0OEUNCS1116h2Q3T/view?usp=drive_link"}, {"host": "go.sangji.ac.kr", "university": "상지대학교", "note": "", "home_url": "https://go.sangji.ac.kr", "plan_url": "https://drive.google.com/file/d/1TfAAaVLOJX9ZiRrMDoJNmmEvxoXay609/view?usp=sharing"}, {"host": "admission.sangha.ac.kr", "university": "상하대학교", "note": "", "home_url": "https://admission.sangha.ac.kr", "plan_url": "https://drive.google.com/file/d/1BCVHBEZyAYu7s6kvHT2qJ4HcgtrmvpjV/view?usp=sharing"}, {"host": "admission.sogang.ac.kr", "university": "서강대학교", "note": "", "home_url": "https://admission.sogang.ac.kr", "plan_url": "https://drive.google.com/file/d/1e9doMOhSUzXlX5ZexJ4Iz6S8bpccmdaw/view?usp=sharing"}, {"host": "entrance-sgu.tistory.com", "university": "서강대학교 입학처", "note": "공식 티스토리 블로그 기반 입학 안내 페이지", "home_url": "https://entrance-sgu.tistory.com", "plan_url": "https://drive.google.com/file/d/1LmtbvnCSft-q7C-Tz_sw3ofu6FuXK3lC/view?usp=sharing"}, {"host": "go.skuniv.ac.kr", "university": "서경대학교", "note": "", "home_url": "https://go.skuniv.ac.kr", "plan_url": "https://drive.google.com/file/d/118RyRb-2oGilTzZZRAbpjWk_b1xrRcXk/view?usp=sharing"}, {"host": "admission.seoultech.ac.kr", "university": "서울과학기술대학교", "note": "", "home_url": "https://admission.seoultech.ac.kr", "plan_url": "https://drive.google.com/file/d/1vKSAi8ACqFzbg8bIM3lGehMXmHS3VgSy/view?usp=sharing"}, {"host": "admission.snue.ac.kr", "university": "서울교육대학교", "note": "", "home_url": "https://admission.snue.ac.kr", "plan_url": "https://drive.google.com/file/d/16S1MsUHL3Jqbkzk3k5NcKz7TKIA2IDzj/view?usp=sharing"}, {"host": "admission.snu.ac.kr", "university": "서울대학교", "note": "", "home_url": "https://admission.snu.ac.kr", "plan_url": "https://drive.google.com/file/d/1vYX9x8l5kIDmP4eW2OO7fMillYlHD6R6/view?usp=sharing"}, {"host": "www.scu.ac.kr", "university": "서울사이버대학교", "note": "Seoul Cyber University", "home_url": "https://www.scu.ac.kr", "plan_url": "https://drive.google.com/file/d/1cw5YT0keCk6ql2XOBkGJIgKNcX-nGIdz/view?usp=sharing"}, {"host": "admission.uos.ac.kr", "university": "서울시립대학교", "note": "", "home_url": "https://admission.uos.ac.kr", "plan_url": "https://drive.google.com/file/d/1uoz6cY6_G9PEaQOSOHN5f1fake0iIXIR/view?usp=sharing"}, {"host": "ipsi.stu.ac.kr", "university": "서울신학대학교", "note": "", "home_url": "https://ipsi.stu.ac.kr", "plan_url": "https://drive.google.com/file/d/1z6az0ymhFiqgqXZzZS3ktD8FVgLlm3__/view?usp=sharing"}, {"host": "admission.swu.ac.kr", "university": "서울여자대학교", "note": "", "home_url": "https://admission.swu.ac.kr", "plan_url": "https://drive.google.com/file/d/10OHY2_DqxJBnArfCdEw4ZqnFt7NiFxth/view?usp=sharing"}, {"host": "www.seowon.ac.kr", "university": "서원대학교", "note": "", "home_url": "https://www.seowon.ac.kr", "plan_url": "https://drive.google.com/file/d/1iCo4teP80RTIaq6dIiPtoS8ik__ElCZz/view?usp=sharing"}, {"host": "ilove.sunmoon.ac.kr", "university": "선문대학교", "note": "", "home_url": "https://ilove.sunmoon.ac.kr", "plan_url": "https://drive.google.com/file/d/1fRGkVagx5dN7vMd4Ie1VAjABt48UL4RE/view?usp=sharing"}, {"host": "www.sungkyul.ac.kr", "university": "성결대학교", "note": "", "home_url": "https://www.sungkyul.ac.kr", "plan_url": "https://drive.google.com/file/d/1nieRG2giVUcZvpW2kmOxiEarJbzZcU9T/view?usp=sharing"}, {"host": "enter.skhu.ac.kr", "university": "성공회대학교", "note": "", "home_url": "https://enter.skhu.ac.kr", "plan_url": "https://drive.google.com/file/d/1e98TZTcTPyH50Go0BvdzaVH9oxfQrxgm/view?usp=sharing"}, {"host": "admission.skku.edu", "university": "성균관대학교", "note": "", "home_url": "https://admission.skku.edu", "plan_url": "https://drive.google.com/file/d/1zpwacDcN7F6r7bcquGB5Pewb-0zoe85S/view?usp=sharing"}, {"host": "www.sjs.ac.kr", "university": "성신대학교(도메인 확인필요)", "note": "", "home_url": "https://www.sjs.ac.kr", "plan_url": "https://drive.google.com/file/d/1WNoLBbCgrpy0vtjdRTYY8tkRwTpiTAOQ/view?usp=sharing"}, {"host": "ipsi.sungshin.ac.kr", "university": "성신여자대학교", "note": "", "home_url": "https://ipsi.sungshin.ac.kr", "plan_url": "https://drive.google.com/file/d/1tMYwwLGrYgZxenHpLFjtWsFXu1eSF9ce/view?usp=sharing"}, {"host": "ipsi.semyung.ac.kr", "university": "세명대학교", "note": "", "home_url": "https://ipsi.semyung.ac.kr", "plan_url": "https://drive.google.com/file/d/1O0s89CIXaKYhIaGYOv5vySEo3Hs2vARa/view?usp=sharing"}, {"host": "ipsi.sejong.ac.kr", "university": "세종대학교", "note": "", "home_url": "https://ipsi.sejong.ac.kr", "plan_url": "https://drive.google.com/file/d/1aJz9IurgoXzGBQZs4Kym1NUHxqt2gpGe/view?usp=sharing"}, {"host": "apply.sehan.ac.kr", "university": "세한대학교", "note": "", "home_url": "https://apply.sehan.ac.kr", "plan_url": "https://drive.google.com/file/d/1mNdRYn2kntYe26OX1oVl4ud-Y0EfYQD7/view?usp=drive_link"}, {"host": "iphak.songwon.ac.kr", "university": "송원대학교", "note": "", "home_url": "https://iphak.songwon.ac.kr", "plan_url": "https://drive.google.com/file/d/1dZPgpxmL-xafPayQgsIMIk9E-CCvVcFb/view?usp=sharing"}, {"host": "www.suwoncatholic.ac.kr", "university": "수원가톨릭대학교", "note": "", "home_url": "https://www.suwoncatholic.ac.kr", "plan_url": "https://drive.google.com/file/d/1R8gM0erVhRTLItdEtIprylKiQ5OBqDql/view?usp=sharing"}, {"host": "ipsi.suwon.ac.kr", "university": "수원대학교", "note": "", "home_url": "https://ipsi.suwon.ac.kr", "plan_url": "https://drive.google.com/file/d/1GkU8oAkdsRUnd3mttV5jKCugV46EwX1W/view?usp=sharing"}, {"host": "admission.sookmyung.ac.kr", "university": "숙명여자대학교", "note": "", "home_url": "https://admission.sookmyung.ac.kr", "plan_url": "https://drive.google.com/file/d/1qVap7g8oS4Ujker9mqiu6ObY43Qk7Q8B/view?usp=sharing"}, {"host": "ipsi.sch.ac.kr", "university": "순천향대학교", "note": "", "home_url": "https://ipsi.sch.ac.kr", "plan_url": "https://drive.google.com/file/d/1fkT6kTwRCkka1bDXWzIFRvtJRs7fSPCW/view?usp=sharing"}, {"host": "iphak.ssu.ac.kr", "university": "숭실대학교", "note": "", "home_url": "https://iphak.ssu.ac.kr", "plan_url": "https://drive.google.com/file/d/1-m9aYWnLYhMJ3PinXSdw-2On3f0EOVeW/view?usp=sharing"}, {"host": "ipsi.silla.ac.kr", "university": "신라대학교", "note": "", "home_url": "https://ipsi.silla.ac.kr", "plan_url": "https://drive.google.com/file/d/1-PjfZvWz0bM5yF9mqmQrzpo9qgMhjv3E/view?usp=sharing"}, {"host": "ipsi.shinhan.ac.kr", "university": "신한대학교", "note": "", "home_url": "https://ipsi.shinhan.ac.kr", "plan_url": "https://drive.google.com/file/d/1hZj4ahBYnNMiarpKxvQiL2Rd-lCbfdRf/view?usp=sharing"}, {"host": "www.acts.ac.kr", "university": "아세아연합신학대학교", "note": "", "home_url": "https://www.acts.ac.kr", "plan_url": "https://drive.google.com/file/d/1mcZr3BuSiK7Vg_XrNcSObdqfEaI-0tRh/view?usp=sharing"}, {"host": "www.iajou.ac.kr", "university": "아주대학교", "note": "", "home_url": "https://www.iajou.ac.kr", "plan_url": "https://drive.google.com/file/d/1uhAdTryVckSsH_iQUw18DrdYFW-GaH7F/view?usp=sharing"}, {"host": "enter.anyang.ac.kr", "university": "안양대학교", "note": "", "home_url": "https://enter.anyang.ac.kr", "plan_url": "https://drive.google.com/file/d/1jUNIAMNT_iZkEcZWrIeaUgiEe74cdtUS/view?usp=sharing"}, {"host": "admission.yonsei.ac.kr", "university": "연세대학교", "note": "", "home_url": "https://admission.yonsei.ac.kr", "plan_url": "https://drive.google.com/file/d/1LpOyeTmrDJJTaYWJKSFvdl1yp4oZ1l_7/view?usp=sharing"}, {"host": "entra.ytus.ac.kr", "university": "연세대학교 미래캠퍼스", "note": "연세대 신촌(yonsei.ac.kr)과 별도 운영", "home_url": "https://entra.ytus.ac.kr", "plan_url": "https://drive.google.com/file/d/14XutzHLGqh4RLS2su9h6HNdi4jtTFblo/view?usp=drive_link"}, {"host": "enter.yu.ac.kr", "university": "영남대학교", "note": "", "home_url": "https://enter.yu.ac.kr", "plan_url": "https://drive.google.com/file/d/1ZDTno0nrvdiyCJTqhBTXsj2jtWGIT_-w/view?usp=sharing"}, {"host": "ipsi.ysu.ac.kr", "university": "영산대학교", "note": "", "home_url": "https://ipsi.ysu.ac.kr", "plan_url": "https://drive.google.com/file/d/1g58zlvy2QruX8IQswV9YLwhgdlF0f7I3/view?usp=drive_link"}, {"host": "youngsan.ac.kr", "university": "영산대학교", "note": "", "home_url": "https://youngsan.ac.kr", "plan_url": "https://drive.google.com/file/d/1-1vofKWRjahh2bNPHQdAy4-5rRwEc_lz/view?usp=drive_link"}, {"host": "www.jesus.ac.kr", "university": "예수대학교", "note": "", "home_url": "https://www.jesus.ac.kr", "plan_url": "https://drive.google.com/file/d/1Dyx7wrfLvQDlgnQ-K8XI0sWcTDGeZJnz/view?usp=drive_link"}, {"host": "admission.yewon.ac.kr", "university": "예원예술대학교", "note": "", "home_url": "https://admission.yewon.ac.kr", "plan_url": "https://drive.google.com/file/d/1FdDdOWC4Gir-YsiddZ04i4TNQCLNBO-e/view?usp=drive_link"}, {"host": "ipsi.yongin.ac.kr", "university": "용인대학교", "note": "", "home_url": "https://ipsi.yongin.ac.kr", "plan_url": "https://drive.google.com/file/d/19oV_BEFRNy6XY9iyRGDFNPzAhxDNsyoL/view?usp=drive_link"}, {"host": "enter.woosuk.ac.kr", "university": "우석대학교", "note": "", "home_url": "https://enter.woosuk.ac.kr", "plan_url": "https://drive.google.com/file/d/1iVTTLmyECSsNxOTaJcPpE5hy0JmSBju8/view?usp=drive_link"}, {"host": "ent.wsu.ac.kr", "university": "우송대학교", "note": "", "home_url": "https://ent.wsu.ac.kr", "plan_url": "https://drive.google.com/file/d/1_lxLYs7uP3Dl0bjeJFYUJZHb0x5zk1P-/view?usp=drive_link"}, {"host": "adm-u.unist.ac.kr", "university": "울산과학기술원 (UNIST)", "note": "", "home_url": "https://adm-u.unist.ac.kr", "plan_url": "https://drive.google.com/file/d/1OkmOnMbBqE-j-sag0W7YdOdyOpGhUVLY/view?usp=drive_link"}, {"host": "www.ulsan.ac.kr", "university": "울산대학교", "note": "", "home_url": "https://www.ulsan.ac.kr", "plan_url": "https://drive.google.com/file/d/1Rm0ousN_2lx_WZfFGBeBtMl7uj8VsTmL/view?usp=drive_link"}, {"host": "ipsi.wku.ac.kr", "university": "원광대학교", "note": "", "home_url": "https://ipsi.wku.ac.kr", "plan_url": "https://drive.google.com/file/d/14xKDNj7KVQXLzxAQ6oQY380e42ohkgKY/view?usp=sharing"}, {"host": "ipsi.uu.ac.kr", "university": "위덕대학교", "note": "", "home_url": "https://ipsi.uu.ac.kr", "plan_url": "https://drive.google.com/file/d/1JYV9rlZ6NAHgFHxQ4VyUeLarZPxgJ-4l/view?usp=drive_link"}, {"host": "ipsi.u1.ac.kr", "university": "유원대학교", "note": "", "home_url": "https://ipsi.u1.ac.kr", "plan_url": "https://drive.google.com/file/d/1KqUmupasTniqUIsQox5XpS_cnRZNkYfI/view?usp=drive_link"}, {"host": "www.kma.ac.kr:461", "university": "육군사관학교", "note": "", "home_url": "https://www.kma.ac.kr", "plan_url": "https://drive.google.com/file/d/161eEULYiP1MkM0LfE5cwvpsf2uCLTnQR/view?usp=sharing"}, {"host": "admission.eulji.ac.kr", "university": "을지대학교", "note": "", "home_url": "https://admission.eulji.ac.kr", "plan_url": "https://drive.google.com/file/d/1sWBRIDOXK6edEY4rEpBQbte9Rtmr-Ja6/view?usp=sharing"}, {"host": "admission.ewha.ac.kr", "university": "이화여자대학교", "note": "", "home_url": "https://admission.ewha.ac.kr", "plan_url": "https://drive.google.com/file/d/17wG-oFOnZqNCZ_d93lykHqFgzssj8YYD/view?usp=sharing"}, {"host": "iphak.inje.ac.kr", "university": "인제대학교", "note": "", "home_url": "https://iphak.inje.ac.kr", "plan_url": "https://drive.google.com/file/d/1hx9kXv-R2EUhOR6g1T8rnLZ97L0MO_Zd/view?usp=sharing"}, {"host": "admission.iccu.ac.kr", "university": "인천가톨릭대학교", "note": "Incheon Catholic University", "home_url": "https://admission.iccu.ac.kr", "plan_url": "https://drive.google.com/file/d/1cS38cONIFu3VfYjvCGNZiPXQ49k4sIhu/view?usp=drive_link"}, {"host": "admission.inu.ac.kr", "university": "인천대학교", "note": "", "home_url": "https://admission.inu.ac.kr", "plan_url": "https://drive.google.com/file/d/1xsLST4CsY8X5TzCEkYYDIzF_ZcdhFCiS/view?usp=sharing"}, {"host": "admission.inha.ac.kr", "university": "인하대학교", "note": "", "home_url": "https://admission.inha.ac.kr", "plan_url": "https://drive.google.com/file/d/1-XuZqSTGuTx2-RbVfJHBS4klPOe0Jey2/view?usp=sharing"}, {"host": "admission.jnu.ac.kr", "university": "전남대학교", "note": "", "home_url": "https://admission.jnu.ac.kr", "plan_url": "https://drive.google.com/file/d/1cN_c6xKusWJ_ZRlXoXlFotSeJQJpbe7m/view?usp=sharing"}, {"host": "enter.jbnu.ac.kr", "university": "전북대학교", "note": "", "home_url": "https://enter.jbnu.ac.kr", "plan_url": "https://drive.google.com/file/d/1_RotaTE_XYHDkU2y0F4-qSKwmz3cMo5w/view?usp=drive_link"}, {"host": "www.jnue.kr", "university": "전주교육대학교", "note": "", "home_url": "https://www.jnue.kr", "plan_url": "https://drive.google.com/file/d/16WTwYp2yoOnIdJ7kROVlyksFGp_zP9LA/view?usp=drive_link"}, {"host": "www.jj.ac.kr", "university": "전주대학교", "note": "", "home_url": "https://www.jj.ac.kr", "plan_url": "https://drive.google.com/file/d/14P0FP1PRyfQPu-0OHLvrGKnGqxaMhxg1/view?usp=sharing"}, {"host": "ibsi.jejunu.ac.kr", "university": "제주대학교", "note": "", "home_url": "https://ibsi.jejunu.ac.kr", "plan_url": "https://drive.google.com/file/d/1mBQGiIvg-Q3lhneNxTPktYcn5YzFUXSg/view?usp=sharing"}, {"host": "apply.jeju.ac.kr", "university": "제주대학교", "note": "", "home_url": "https://apply.jeju.ac.kr", "plan_url": "https://drive.google.com/file/d/1lQbaBaHMpqoLuY54HBJexLx14NOk6zlu/view?usp=sharing"}, {"host": "i.chosun.ac.kr", "university": "조선대학교", "note": "", "home_url": "https://i.chosun.ac.kr", "plan_url": "https://drive.google.com/file/d/1aW66VQxlJa0Z_mVbBePEYmKIml90sr_D/view?usp=sharing"}, {"host": "www.joongbu.ac.kr", "university": "중부대학교", "note": "", "home_url": "https://www.joongbu.ac.kr", "plan_url": "https://drive.google.com/file/d/1QS90NZftUTvVYjcRMuv8Iq0ZoIJ7-6Mc/view?usp=sharing"}, {"host": "admission.cau.ac.kr", "university": "중앙대학교", "note": "", "home_url": "https://admission.cau.ac.kr", "plan_url": "https://drive.google.com/file/d/1RHN8AvdPwzcnBdckH7jjsW-tuLk7srmf/view?usp=sharing"}, {"host": "ipsi.jwu.ac.kr", "university": "중원대학교", "note": "", "home_url": "https://ipsi.jwu.ac.kr", "plan_url": "https://drive.google.com/file/d/1Qmu2H9--M-EnluZV3Zq5l6xzjHELiZYf/view?usp=drive_link"}, {"host": "admission.cha.ac.kr", "university": "차의과학대학교", "note": "", "home_url": "https://admission.cha.ac.kr", "plan_url": "https://drive.google.com/file/d/1Wji4V32yhGE3hJ1KvcltmSB9prhgyEhv/view?usp=sharing"}, {"host": "admission.csu.ac.kr", "university": "창신대학교", "note": "", "home_url": "https://admission.csu.ac.kr", "plan_url": "https://drive.google.com/file/d/1eBNXxpwDsO81lY_tAhC16t--MMcrK3fX/view?usp=sharing"}, {"host": "enter.chungwoon.ac.kr", "university": "청운대학교", "note": "", "home_url": "https://enter.chungwoon.ac.kr", "plan_url": "https://drive.google.com/file/d/1pBwKiyu_HKvpnreAUKARp4ImhM2f4I5x/view?usp=sharing"}, {"host": "www.cje.ac.kr", "university": "청주교육대학교", "note": "", "home_url": "https://www.cje.ac.kr", "plan_url": "https://drive.google.com/file/d/19yW4ndSRX-QPG9cE_sWYgVNwueY2bqkZ/view?usp=drive_link"}, {"host": "www.cju.ac.kr", "university": "청주대학교", "note": "", "home_url": "https://www.cju.ac.kr", "plan_url": "https://drive.google.com/file/d/1Hu75mri77qNpNhessDfCvMj8aENIgfTV/view?usp=sharing"}, {"host": "admission.cdu.ac.kr", "university": "초당대학교", "note": "", "home_url": "https://admission.cdu.ac.kr", "plan_url": "https://drive.google.com/file/d/1xRLUwF6FuJiVXOEvM70jCkKvaBEyAIyB/view?usp=sharing"}, {"host": "enter.chugye.ac.kr", "university": "추계예술대학교", "note": "", "home_url": "https://enter.chugye.ac.kr", "plan_url": "https://drive.google.com/file/d/1GRtyFXuESo2omHN2Zv4t8AFReowqTL1M/view?usp=sharing"}, {"host": "enter.cnue.ac.kr", "university": "춘천교육대학교", "note": "", "home_url": "https://enter.cnue.ac.kr", "plan_url": "https://drive.google.com/file/d/1wV1Fce4LP5OTDlayYQTKjX6PUElrLZik/view?usp=sharing"}, {"host": "ipsi.cnu.ac.kr", "university": "충남대학교", "note": "", "home_url": "https://ipsi.cnu.ac.kr", "plan_url": "https://drive.google.com/file/d/1VHfKOHBc9DGnn0EJTs2l8NfDlJ0lfOn1/view?usp=sharing"}, {"host": "ipsi.chungbuk.ac.kr", "university": "충북대학교", "note": "", "home_url": "https://ipsi.chungbuk.ac.kr", "plan_url": "https://drive.google.com/file/d/1hSQWiKyr9w0bRSN-PFQGUWBGt9Nlz2ff/view?usp=sharing"}, {"host": "www.calvintu.co.kr", "university": "칼빈대학교", "note": "", "home_url": "https://www.calvintu.co.kr", "plan_url": "https://drive.google.com/file/d/1KOeO0JMEXj9wZuz9c1_7CalYNrX24cny/view?usp=sharing"}, {"host": "www.taejae.ac.kr", "university": "태재대학교", "note": "", "home_url": "https://www.taejae.ac.kr", "plan_url": "https://drive.google.com/file/d/1Ef-vtb5ALq6cyH-PsY07DbFksgHjVsAG/view?usp=sharing"}, {"host": "tapply.tonc.net", "university": "태재대학교", "note": "(온라인 지원 시스템 도메인)", "home_url": "https://tapply.tonc.net", "plan_url": "https://drive.google.com/file/d/1Dyx7wrfLvQDlgnQ-K8XI0sWcTDGeZJnz/view?usp=drive_link"}, {"host": "www.puts.ac.kr", "university": "평택대학교", "note": "", "home_url": "https://www.puts.ac.kr", "plan_url": "https://drive.google.com/file/d/1siHy82ccDBF7oTHFlOgsj4lbhaFVi7im/view?usp=sharing"}, {"host": "entrance.ptu.ac.kr", "university": "평택대학교", "note": "", "home_url": "https://entrance.ptu.ac.kr", "plan_url": "https://drive.google.com/file/d/1L55ARc1Yup1JUNgfyozn1nF2QyhMRhX6/view?usp=sharing"}, {"host": "adm-u.postech.ac.kr", "university": "포항공과대학교 (POSTECH)", "note": "", "home_url": "https://adm-u.postech.ac.kr", "plan_url": "https://drive.google.com/file/d/1W7c4cx4P96EVGyh5S947iZycEBRylwIl/view?usp=drive_link"}, {"host": "ipsi.hknu.ac.kr", "university": "한경국립대학교", "note": "", "home_url": "https://ipsi.hknu.ac.kr", "plan_url": "https://drive.google.com/file/d/1TWHZNMT-HtWA-V5XuYcImgMskg_owqwT/view?usp=drive_link"}, {"host": "iphak.tukorea.ac.kr", "university": "한국공학대학교 (구 한국산업기술대)", "note": "", "home_url": "https://iphak.tukorea.ac.kr", "plan_url": "https://drive.google.com/file/d/1kUOspmbqzQD6xZOIb2UbopVhY6xfhgd4/view?usp=drive_link"}, {"host": "admission.kaist.ac.kr", "university": "한국과학기술원 (KAIST)", "note": "", "home_url": "https://admission.kaist.ac.kr", "plan_url": "https://drive.google.com/file/d/1NorQ4ccRnRbLX2RVLykcQnA0WVlE5x0_/view?usp=drive_link"}, {"host": "ent.knue.ac.kr", "university": "한국교원대학교", "note": "", "home_url": "https://ent.knue.ac.kr", "plan_url": "https://drive.google.com/file/d/1iV8ZBhH3F3XvfLuTssTw3wykjXim5XKi/view?usp=drive_link"}, {"host": "www.ut.ac.kr", "university": "한국교통대학교", "note": "", "home_url": "https://www.ut.ac.kr", "plan_url": "https://drive.google.com/file/d/1dze4ysjPrQPeG7-yKu1gspGY4Uqs-mY7/view?usp=drive_link"}, {"host": "ipsi.koreatech.ac.kr", "university": "한국기술교육대학교", "note": "", "home_url": "https://ipsi.koreatech.ac.kr", "plan_url": "https://drive.google.com/file/d/1O_4baZ36la_pU5slnmnW90teAaM8FICE/view?usp=drive_link"}, {"host": "ipsi.bible.ac.kr", "university": "한국성서대학교", "note": "", "home_url": "https://ipsi.bible.ac.kr", "plan_url": "https://drive.google.com/file/d/1dWYzMvF5cMR4iw5CA35fpMdHl-IdZgcq/view?usp=drive_link"}, {"host": "admission.kentech.ac.kr", "university": "한국에너지공과대학교 (KENTECH)", "note": "", "home_url": "https://admission.kentech.ac.kr", "plan_url": "https://drive.google.com/file/d/1NodhFk1RkN1smyqAunmUuJCtnRMoCRRI/view?usp=drive_link"}, {"host": "www.karts.ac.kr", "university": "한국예술종합학교", "note": "", "home_url": "https://www.karts.ac.kr", "plan_url": "https://drive.google.com/file/d/14P0FP1PRyfQPu-0OHLvrGKnGqxaMhxg1/view?usp=sharing"}, {"host": "adms.hufs.ac.kr", "university": "한국외국어대학교", "note": "", "home_url": "https://adms.hufs.ac.kr", "plan_url": "https://drive.google.com/file/d/1_MoH8yd8v3qQ09dQU0i8czUrj0G1eIOQ/view?usp=drive_link"}, {"host": "ipsi.knsu.ac.kr", "university": "한국체육대학교", "note": "", "home_url": "https://ipsi.knsu.ac.kr", "plan_url": "https://drive.google.com/file/d/1J7v0jD2vkheHlPw_4-sy2SyRSTme1084/view?usp=drive_link"}, {"host": "ipsi.kbtus.ac.kr", "university": "한국침례신학대학교", "note": "", "home_url": "https://ipsi.kbtus.ac.kr", "plan_url": "https://drive.google.com/file/d/10YZ4QmAGNhlpuqDDgk-Ehx8arKGzFM8D/view?usp=sharing"}, {"host": "ibhak.kau.ac.kr", "university": "한국항공대학교", "note": "", "home_url": "https://ibhak.kau.ac.kr", "plan_url": "https://drive.google.com/file/d/1O4MdXFqtW4U5CRcxupp4_zpHdwSHO_Su/view?usp=drive_link"}, {"host": "www.kmou.ac.kr", "university": "한국해양대학교", "note": "", "home_url": "https://www.kmou.ac.kr", "plan_url": "https://drive.google.com/file/d/1u5V1vWBC8KEOrrmxUmQ8ugtyNq46GJ19/view?usp=drive_link"}, {"host": "ibsi.hannam.ac.kr", "university": "한남대학교", "note": "", "home_url": "https://ibsi.hannam.ac.kr", "plan_url": "https://drive.google.com/file/d/1nrLzRIY6xkRDFCKnKML10_SXWIwVy6p5/view?usp=sharing"}, {"host": "admissions.handong.edu", "university": "한동대학교", "note": "", "home_url": "https://admissions.handong.edu", "plan_url": "https://drive.google.com/file/d/12gIOub5j55_vhDQYt48Ld78zoAXrHnnw/view?usp=sharing"}, {"host": "ipsi.halla.ac.kr", "university": "한라대학교", "note": "", "home_url": "https://ipsi.halla.ac.kr", "plan_url": "https://drive.google.com/file/d/1-leUmTw1Ir07gAoKvh2PDhsIGx3kkoYL/view?usp=sharing"}, {"host": "admission.hallym.ac.kr", "university": "한림대학교", "note": "", "home_url": "https://admission.hallym.ac.kr", "plan_url": "https://drive.google.com/file/d/17d_aqrUhZms_ITRkMiOuS2X69sU3_2uQ/view?usp=sharing"}, {"host": "helper.hanseo.ac.kr", "university": "한서대학교", "note": "", "home_url": "https://helper.hanseo.ac.kr", "plan_url": "https://drive.google.com/file/d/10Zym40DVqvLnrxeRkEQx6z6c0hicdm0Y/view?usp=drive_link"}, {"host": "enter.hansung.ac.kr", "university": "한성대학교", "note": "", "home_url": "https://enter.hansung.ac.kr", "plan_url": "https://drive.google.com/file/d/15M2e8iL41D8GDLBqj_R7lqy270Tc4aQ4/view?usp=sharing"}, {"host": "ipsi.hansei.ac.kr", "university": "한세대학교", "note": "", "home_url": "https://ipsi.hansei.ac.kr", "plan_url": "https://drive.google.com/file/d/1SJk0csdQ2Q0-UUxsXa9dFRelLUeiZ04U/view?usp=sharing"}, {"host": "ent.hs.ac.kr", "university": "한신대학교", "note": "", "home_url": "https://ent.hs.ac.kr", "plan_url": "https://drive.google.com/file/d/1rwkLdFWhQcxbeEfI-Y8amdwzpanb0q2t/view?usp=sharing"}, {"host": "goerica.hanyang.ac.kr", "university": "한양대학교 (ERICA)", "note": "", "home_url": "https://goerica.hanyang.ac.kr", "plan_url": "https://drive.google.com/file/d/1Rb3CZx4CotrMBIOkwW25wl4TgEstEK6j/view?usp=sharing"}, {"host": "go.hanyang.ac.kr", "university": "한양대학교 (서울)", "note": "", "home_url": "https://go.hanyang.ac.kr", "plan_url": "https://drive.google.com/file/d/1xJvmUcdUIytLa2MZ0HgqVSf63UQAA1aa/view?usp=sharing"}, {"host": "www.hanil.ac.kr", "university": "한일장신대학교", "note": "", "home_url": "https://www.hanil.ac.kr", "plan_url": "https://drive.google.com/file/d/1vALr7NRnamPwyxtMUnzT6zezwsU_pq3F/view?usp=drive_link"}, {"host": "www.navy.ac.kr:10001", "university": "해군사관학교", "note": "", "home_url": "https://www.navy.ac.kr", "plan_url": "https://drive.google.com/file/d/1ezOypG9u6qshvyhPtcyD7mIZMQA5sKkt/view?usp=sharing"}, {"host": "iphak.uhs.ac.kr", "university": "협성대학교", "note": "", "home_url": "https://iphak.uhs.ac.kr", "plan_url": "https://drive.google.com/file/d/1ZivmFMgkHweiy5X2jijPz-RHFIaWb_Xz/view?usp=sharing"}, {"host": "ipsi.htus.ac.kr", "university": "협성대학교", "note": "", "home_url": "https://ipsi.htus.ac.kr", "plan_url": "https://drive.google.com/file/d/19QNZJqld5UyWzWTiFcWCERMWgLu857I7/view?usp=sharing"}, {"host": "enter.honam.ac.kr", "university": "호남대학교", "note": "", "home_url": "https://enter.honam.ac.kr", "plan_url": "https://drive.google.com/file/d/1u5V1vWBC8KEOrrmxUmQ8ugtyNq46GJ19/view?usp=drive_link"}, {"host": "ipsi.hoseo.ac.kr", "university": "호서대학교", "note": "", "home_url": "https://ipsi.hoseo.ac.kr", "plan_url": "https://drive.google.com/file/d/1fkYsmOWijItPOdomgJbenlcC7fEWdhhh/view?usp=sharing"}, {"host": "www.howon.ac.kr", "university": "호원대학교", "note": "", "home_url": "https://www.howon.ac.kr", "plan_url": "https://drive.google.com/file/d/1ezOypG9u6qshvyhPtcyD7mIZMQA5sKkt/view?usp=sharing"}, {"host": "admission.hongik.ac.kr", "university": "홍익대학교", "note": "", "home_url": "https://admission.hongik.ac.kr", "plan_url": "https://drive.google.com/file/d/1uaoMOEJ8pKqzNTx8y4jXV2IioulogieG/view?usp=sharing"}, {"host": "www.hsmu.ac.kr", "university": "화성의과학대학교", "note": "", "home_url": "https://www.hsmu.ac.kr", "plan_url": "https://drive.google.com/file/d/1aVNMl4Ujlb8nH592byiNMGxQ5vvqq8sy/view?usp=sharing"}];
+
+    const grid = document.getElementById('grid');
+    const empty = document.getElementById('empty');
+    const q = document.getElementById('q');
+    const badgeCount = document.getElementById('badgeCount');
+    const kTotal = document.getElementById('kTotal');
+    const kDrive = document.getElementById('kDrive');
+    const kShown = document.getElementById('kShown');
+
+    let driveOnly = false;
+
+    function escapeHtml(s) {
+      return String(s || '').replace(/[&<>"']/g, m => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[m]));
+    }
+
+    function render() {
+      const query = (q.value || '').trim().toLowerCase();
+      grid.innerHTML = '';
+      let shown = 0;
+
+      for (let i = 0; i < ROWS.length; i++) {
+        const r = ROWS[i];
+        const name = (r.university || '');
+        const host = (r.host || '');
+        const plan = (r.plan_url || '');
+        const home = (r.home_url || '');
+        const hay = (name + ' ' + host).toLowerCase();
+
+        if (driveOnly && !plan) continue;
+        if (query && !hay.includes(query)) continue;
+
+        shown++;
+
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.animationDelay = `${Math.min(shown * 0.03, 0.5)}s`;
+
+        card.innerHTML = `
+          <div class="card-header">
+            <div>
+              <div class="uni-name">${escapeHtml(name)}</div>
+              <div class="host">${escapeHtml(host)}</div>
+            </div>
+          </div>
+          <div class="card-actions">
+            <a class="link-btn secondary" href="${home}" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                <polyline points="9 22 9 12 15 12 15 22"/>
+              </svg>
+              입학처
+            </a>
+            <a class="link-btn primary ${plan ? '' : 'disabled'}" href="${plan || '#'}" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              시행계획
+            </a>
+          </div>
+        `;
+
+        grid.appendChild(card);
+      }
+
+      badgeCount.textContent = `${shown}개 표시`;
+      empty.style.display = shown ? 'none' : 'block';
+      kTotal.textContent = ROWS.length.toLocaleString('ko-KR');
+      kDrive.textContent = ROWS.filter(r => r.plan_url).length.toLocaleString('ko-KR');
+      kShown.textContent = shown.toLocaleString('ko-KR');
+    }
+
+    document.getElementById('clear').addEventListener('click', () => {
+      q.value = '';
+      driveOnly = false;
+      document.getElementById('driveOnly').innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        자료 있는 대학만
+      `;
+      render();
+    });
+
+    document.getElementById('driveOnly').addEventListener('click', (e) => {
+      driveOnly = !driveOnly;
+      e.currentTarget.innerHTML = driveOnly ? `
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7"/>
+          <rect x="14" y="3" width="7" height="7"/>
+          <rect x="14" y="14" width="7" height="7"/>
+          <rect x="3" y="14" width="7" height="7"/>
+        </svg>
+        전체 보기
+      ` : `
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+          <polyline points="7 10 12 15 17 10"/>
+          <line x1="12" y1="15" x2="12" y2="3"/>
+        </svg>
+        자료 있는 대학만
+      `;
+      render();
+    });
+
+    q.addEventListener('input', render);
+    render();
+  </script>
+</body>
+</html>
